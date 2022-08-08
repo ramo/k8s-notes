@@ -22,4 +22,20 @@ kubectl create deployment nginx-deployment --image=nginx --replicas=1
 kubectl expose deployment nginx-deployment --port=80 --target-port=80 --name=nginx-service
 ```
 
+### View KubeConfig
+```
+kubectl config view
+```
+
+### Change context
+```
+kubectl config use-context kubernetes-admin@kubernetes
+```
+### Change namespace of current context
+```
+kubectl config set-context --current --namespace=test
+```
+
+
+
 
