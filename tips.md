@@ -7,9 +7,9 @@ This wil make Vim to make use of spaces when tab is pressed
 Very useful for Yaml file editing.
 
 ```
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=2 shiftwidth=2 expandtab # for editing
+set nu # numbers
+set ai # auto indent
 ```
 
 ## Multiline select
@@ -42,6 +42,15 @@ export do="--dry-run=client --o yaml"
 
 # Delete the pods forcefully without any waiting time, saves 30s
 export now="--force --grace-period=0"
+
+alias kn="kubectl config set-context --current --namespace"
+alias cc='kubectl config view --minify -o jsonpath="{..current-context} - {..namespace}"'
+
+kc() {
+  k config use-context $1;
+  kn default;
+}
+
 ```
 
 # kubectl create
